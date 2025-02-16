@@ -1,0 +1,5 @@
+.config/ok/
+.config/lazygit/state.yml
+.config/nvim/lazy-lock.json
+.config/nvim/lazyvim.json
+.config/wezterm/background/*
