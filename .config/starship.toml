@@ -1,0 +1,133 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[╭─](rosewater)\
+$os$username\
+[   ](text)$directory\
+$git_branch$git_metrics$git_status\
+$shell\
+$python\
+$line_break\
+[╰─❯ ](rosewater)
+"""
+right_format = """
+$status
+"""
+add_newline = false
+command_timeout = 1000
+palette = "catppuccin_mocha"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[fill]
+disabled = true
+symbol = "─"
+style = "overlay0"
+
+[os]
+disabled = false
+# format = "[$symbol](text)"
+format = "[ $symbol](rosewater)"
+
+[os.symbols]
+# Arch = "[󰣇 ](fg:#0097d3 bg:text)"
+# Windows = "[ ](fg:#0078d7 bg:text)"
+# Ubuntu = "[ ](fg:#ff4700 bg:text)"
+Arch = "[󰣇 ](fg:#0097d3)"
+Windows = "[ ](fg:#0078d7)"
+Ubuntu = "[ ](fg:#ff4700)"
+
+[username]
+disabled = false
+show_always = true
+# style_user = "blue"
+# style_root = "red"
+# format = "[](fg:text bg:$style)[$user](bold fg:base bg:$style)[](fg:$style bg:none)"
+style_root = "red bold"
+style_user = "mauve bold"
+format = "[ ](text)[$user]($style)[ ](rosewater)"
+
+[shell]
+disabled = false
+bash_indicator = " bash"
+zsh_indicator = " zsh"
+fish_indicator = "󰈺 fish"
+powershell_indicator = " powershell"
+pwsh_indicator = " pwsh"
+format = "[[with](fg:text) $indicator]($style)"
+style = "fg:flamingo"
+
+[directory]
+truncation_length = 3
+truncation_symbol = ".../"
+style = "fg:sky"
+home_symbol = ' '
+
+[directory.substitutions]
+'\' = '  '
+'/' = '  '
+
+[python]
+disabled = false
+symbol = "󰌠 "
+format = " [via ](fg:text)[\\[${symbol}(${version} )[\\($virtualenv\\)](fg:#1684b4)\\]]($style)"
+style = "fg:#ffdd58"
+
+[git_branch]
+format = "[[on](text) $symbol$branch(:$remote_branch)]($style) "
+style = "pink"
+symbol = "󰊢 "
+
+[git_status]
+disabled = false
+format = "[($ahead_behind )($all_status )]($style) "
+style = "flamingo"
+ahead = "[⇡${count}](lavender)"
+behind = "[⇣${count}](red)"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = "🏳${count}"
+deleted = " ${count}"
+renamed = " ${count}"
+modified = "[ ${count}](peach)"
+staged = "[+$count](green)"
+stashed = " ${count}"
+untracked = "[ ${count}](sapphire)"
+up_to_date = ''
+
+[git_metrics]
+disabled = true
+only_nonzero_diffs = true
+format = "[+$added](green)|[-$deleted](maroon) "
+
+[status]
+format = '[$symbol \[exit code [$status](#cba6f7)\]](#cdd6f4)'
+symbol = '[ ](bold red)'
+success_symbol = '[ ](bold green)'
+map_symbol = true
+disabled = false
