@@ -37,10 +37,10 @@ if platform.is_win then
     },
   }
 elseif platform.is_linux then
-  options.default_prog = { label = "Zsh", args = "zsh -l" }
+  options.default_prog = { "zsh", "-l" }
   options.launch_menu = {
-    { label = "Bash", args = "$(which bash) -l", cwd = home_path },
-    { label = "Zsh", args = "$(which zsh) -l", cwd = home_path },
+    { label = "Bash", args = { "bash", "-l" }, cwd = home_path },
+    { label = "Zsh", args = { "zsh", "-l" }, cwd = home_path },
   }
 end
 
