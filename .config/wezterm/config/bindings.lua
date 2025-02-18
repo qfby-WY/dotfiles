@@ -2,6 +2,8 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local keys = {
+  { key = "h", mods = "SUPER|SHIFT", action = act.Hide },
+  { key = "f", mods = "SUPER|SHIFT", action = act.ToggleFullScreen },
   { key = "x", mods = "LEADER", action = act.ActivateCopyMode },
   { key = "a", mods = "LEADER|CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
 

@@ -22,7 +22,7 @@ return {
     "Symbols Nerd Font Mono",
   }),
   font_size = 11.8,
-  window_decorations = "INTEGRATED_BUTTONS|RESIZE",
+  window_decorations = "RESIZE",
   window_padding = { left = 3, right = 3, top = 2, bottom = 0 },
   window_background_opacity = 1,
   adjust_window_size_when_changing_font_size = false,

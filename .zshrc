@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # zsh integration of cli tools
-[ -x "$(command -v fzf)" ] && source <(fzf --zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -x "$(command -v direnv)" ] && eval "$(direnv hook zsh)"
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
 # export STARSHIP_CONFIG=~/.config/starship.toml

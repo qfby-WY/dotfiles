@@ -5,12 +5,12 @@ return {
       colorscheme = "catppuccin",
     },
   },
-  -- {
-  --   "catppuccin/nvim",
-  --   opts = {
-  --     transparent_background = false,
-  --   },
-  -- },
+  {
+    "catppuccin/nvim",
+    opts = {
+      transparent_background = true,
+    },
+  },
   {
     "folke/noice.nvim",
     opts = {
