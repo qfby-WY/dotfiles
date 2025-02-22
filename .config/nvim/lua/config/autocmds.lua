@@ -7,19 +7,10 @@
 -- end
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = "python",
+  pattern = { "c", "cpp", "python" },
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.softtabstop = 4
     vim.opt_local.shiftwidth = 4
   end,
 })
-
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---     group = augroup("wrap_spell"),
---     pattern = { "gitcommit", "markdown" },
---     callback = function()
---         vim.opt_local.wrap = true
---         vim.opt_local.spell = false
---     end,
--- })
