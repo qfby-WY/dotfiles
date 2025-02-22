@@ -2,6 +2,7 @@
 [[ $- != *i* ]] && return
 
 # basic environment setup
+# NOTE: Since several tools are installed via cargo, cargo env must be setup first.
 [ -f "${CARGO_HOME:-$HOME/.cargo}/env" ] && . "${CARGO_HOME:-$HOME/.cargo}/env"
 if [ -d "$HOME/.rustup" ]; then
   export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
@@ -11,6 +12,9 @@ if [ -x "$(command -v fnm)" ]; then
   eval "$(fnm env --use-on-cd --shell zsh)"
   source <(fnm completions --shell zsh)
   export FNM_NODE_DIST_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
+fi
+if [[ ! "$PATH" == *$HOME/.local/bin* ]] && [[ -d "$HOME/.local/bin" ]]; then
+  PATH="${PATH:+${PATH}:}$HOME/.local/bin"
 fi
 
 # zsh integration of cli tools
@@ -27,6 +31,7 @@ else
   alias ls='ls --color=auto'
 fi
 
+alias b='bat'
 alias v='nvim'
 alias lg='lazygit'
 # navigation
