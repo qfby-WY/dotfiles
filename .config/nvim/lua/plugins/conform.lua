@@ -1,3 +1,6 @@
+local is_win = os.getenv("OS") == "Windows_NT"
+local HOME = is_win and os.getenv("USERPROFILE") or os.getenv("HOME")
+
 return {
   "stevearc/conform.nvim",
   opts = {
@@ -8,7 +11,7 @@ return {
     formatters = {
       ["clang-format"] = {
         append_args = {
-          "--style=file:" .. os.getenv("HOME") .. "/.config/.clang-format",
+          "--style=file:" .. HOME .. "/.config/.clang-format",
           "--sort-includes",
         },
       },
