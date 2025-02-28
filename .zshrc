@@ -1,5 +1,6 @@
 
 [[ $- != *i* ]] && return
+bindkey -v
 
 # basic environment setup
 # NOTE: Since several tools are installed via cargo, cargo env must be setup first.
