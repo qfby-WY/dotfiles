@@ -23,6 +23,7 @@ fi
 [ -x "$(command -v direnv)" ] && eval "$(direnv hook zsh)"
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
 # export STARSHIP_CONFIG=~/.config/starship.toml
+[ -x "$(command -v uv)" ] && eval "$(uv generate-shell-completion zsh)"
 
 if [[ -x "$(command -v eza)" ]]; then
   alias ll='eza -al --header --icons=auto --sort=type'
