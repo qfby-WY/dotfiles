@@ -41,7 +41,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias sized='du -chs ./*'
-alias pp="echo $PATH | tr ':' '\n'"
+
+function pp() {
+  echo $PATH | tr ':' '\n'
+}
 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # NOTE: zsh-syntax-highlighting must be at the end of .zshrc file!
