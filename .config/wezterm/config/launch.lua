@@ -13,7 +13,7 @@ if platform.is_win then
     {
       label = "Miniconda3",
       args = {
-        "powershell.exe",
+        "pwsh.exe",
         "-ExecutionPolicy",
         "ByPass",
         "-NoExit",

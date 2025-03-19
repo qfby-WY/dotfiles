@@ -9,3 +9,4 @@ custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   MindSpore: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+changeps1: false
