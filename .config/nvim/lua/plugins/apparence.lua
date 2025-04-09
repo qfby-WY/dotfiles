@@ -28,4 +28,15 @@ return {
       },
     },
   },
+  {
+    "echasnovski/mini.icons",
+    opts = {
+      extension = {
+        h = { glyph = "", hl = "MiniIconsPurple" },
+      },
+      filetype = {
+        c = { glyph = "", hl = "MiniIconsBlue" },
+      },
+    },
+  },
 }
