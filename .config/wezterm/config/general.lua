@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 local platform = require("utils.platform")
-local gpu_adapters = require("utils.gpu-adapter")
+-- local gpu_adapters = require("utils.gpu-adapter")
 
 local BG_PIC = "Courtside-Sunset.png"
 local COLOR_SCHEME = "Catppuccin Mocha"
@@ -9,10 +9,11 @@ local used_scheme = wezterm.color.get_builtin_schemes()[COLOR_SCHEME]
 
 return {
   -- WebGPU
-  max_fps = 120,
-  front_end = "WebGpu",
-  webgpu_power_preference = "HighPerformance",
-  webgpu_preferred_adapter = gpu_adapters:pick_best(),
+  -- max_fps = 120,
+  -- front_end = "WebGpu",
+  -- webgpu_power_preference = "HighPerformance",
+  -- webgpu_preferred_adapter = gpu_adapters:pick_best(),
+  -- webgpu_force_fallback_adapter = true,
 
   -- apparence
   color_scheme = COLOR_SCHEME,
@@ -39,7 +40,7 @@ return {
       width = "120%",
       vertical_offset = "-10%",
       horizontal_offset = "-10%",
-      opacity = 0.95,
+      opacity = 0.9,
     },
   },
 
