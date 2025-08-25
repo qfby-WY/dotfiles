@@ -1,8 +1,8 @@
 ---
 BasedOnStyle: Google
 AccessModifierOffset: -2
-AlignAfterOpenBracket: BlockIndent
-AlignArrayOfStructures: None
+AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Left
 AlignConsecutiveAssignments:
   Enabled: true
   AcrossEmptyLines: false
@@ -81,7 +81,7 @@ AlwaysBreakBeforeMultilineStrings: true
 AttributeMacros:
   - __capability
 BinPackArguments: true
-BinPackParameters: true
+BinPackParameters: BinPack
 BitFieldColonSpacing: Both
 BraceWrapping:
   AfterCaseLabel: false
@@ -135,7 +135,7 @@ ForEachMacros:
   - BOOST_FOREACH
 IfMacros:
   - KJ_IF_MAYBE
-IncludeBlocks: Regroup
+IncludeBlocks: Preserve
 IncludeCategories:
   - Regex: ^<ext/.*\.h>
     Priority: 2
@@ -157,7 +157,7 @@ IncludeIsMainRegex: ([-_](test|unittest))?$
 IncludeIsMainSourceRegex: ""
 IndentAccessModifiers: false
 IndentCaseBlocks: false
-IndentCaseLabels: true
+IndentCaseLabels: false
 IndentExternBlock: AfterExternBlock
 IndentGotoLabels: true
 IndentPPDirectives: AfterHash
