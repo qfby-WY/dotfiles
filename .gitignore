@@ -3,3 +3,4 @@
 .config/nvim/lazy-lock.json
 .config/nvim/lazyvim.json
 .config/wezterm/background/*
+.config/uv/uv-receipt.json
