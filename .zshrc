@@ -21,6 +21,7 @@ fi
 # zsh integration of cli tools
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -x "$(command -v direnv)" ] && eval "$(direnv hook zsh)"
+[ -x "$(command -v zoxide)" ] && eval "$(zoxide init --cmd cd zsh)"
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
 # export STARSHIP_CONFIG=~/.config/starship.toml
 [ -x "$(command -v uv)" ] && eval "$(uv generate-shell-completion zsh)"
