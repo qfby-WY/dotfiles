@@ -5,9 +5,11 @@ bindkey -v
 # basic environment setup
 # NOTE: Since several tools are installed via cargo, cargo env must be setup first.
 [ -f "${CARGO_HOME:-$HOME/.cargo}/env" ] && . "${CARGO_HOME:-$HOME/.cargo}/env"
-if [ -d "$HOME/.rustup" ]; then
-  export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-  export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+if [ -x "$(command -v rustup)" ]; then
+  source <(rustup completions zsh)
+  # eval "$(rustup completions zsh cargo)"
+  export RUSTUP_UPDATE_ROOT=https://mirrors.cernet.edu.cn/rustup/rustup
+  export RUSTUP_DIST_SERVER=https://mirrors.cernet.edu.cn/rustup
 fi
 if [ -x "$(command -v fnm)" ]; then
   eval "$(fnm env --use-on-cd --shell zsh)"
@@ -27,7 +29,7 @@ fi
 [ -x "$(command -v uv)" ] && eval "$(uv generate-shell-completion zsh)"
 
 if [[ -x "$(command -v eza)" ]]; then
-  alias ll='eza -al --header --icons=auto --sort=type'
+  alias ll='eza -Haghl --icons=auto --sort=type'
   alias ls='eza --icons=auto --sort=type'
 else
   alias ll='ls -al --color=auto'
